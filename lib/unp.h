@@ -45,6 +45,18 @@
 
 #include "error.c"
 #include "wrapunix.c"
+#include "sock_bind_wild.c"
+#include "sock_cmp_addr.c"
+#include "sock_cmp_port.c"
+#include "sock_get_port.c"
+#include "sock_ntop.c"
+#include "sock_ntop_host.c"
+#include "sock_set_addr.c"
+#include "sock_set_port.c"
+#include "sock_set_wild.c"
+#include "readline.c"
+#include "readn.c"
+#include "writen.c"
 
 #endif /* _unp_h */
 
