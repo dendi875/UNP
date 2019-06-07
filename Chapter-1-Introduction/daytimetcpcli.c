@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 		err_sys("socket error");
 	}
 
-	bzero(&servaddr, sizeof(servaddr));
+	bzero(&servaddr, sizeof(servaddr)); /* 把套接字地址结构初始化为0 */
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_port = htons(13);
 	if (inet_pton(AF_INET, argv[1], &servaddr.sin_addr) <= 0) {
