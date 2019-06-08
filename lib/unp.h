@@ -39,8 +39,12 @@
 #endif
 
 /* 常值 */
+
 #define MAXLINE		4096	/* 文件行的最大长度 */
 #define BUFFSIZE    8192	/* 读写缓冲区的字节数 */
+
+/* Define some port number that can be used for our examples */
+#define SERV_PORT   9877    /* TCP and UDP */
 
 
 #include "error.c"
@@ -57,6 +61,7 @@
 #include "readline.c"
 #include "readn.c"
 #include "writen.c"
+#include "str_echo.c"
 
 #endif /* _unp_h */
 

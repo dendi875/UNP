@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
 
 		ticks = time(NULL);
 
+		/* 返回 \r\n 表示记录的结束 */
 		snprintf(buff, sizeof(buff), "%.24s\r\n", ctime(&ticks));
 
 		if (write(connfd, buff, strlen(buff)) != strlen(buff)) {
