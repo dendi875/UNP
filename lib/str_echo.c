@@ -1,3 +1,8 @@
+/**
+ * TCP 回射服务器程序：str_echo 函数
+ *
+ * read　函数从套接字中读入数据，Writen 函数把其中的内容回射给客户端
+ */
 #include "unp.h"
 
 void str_echo(int sockfd)

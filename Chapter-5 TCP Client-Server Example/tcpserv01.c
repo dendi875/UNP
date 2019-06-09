@@ -1,5 +1,5 @@
 /**
- * 基于 TCP 的回射程序－服务器端
+ * 基于 TCP 的回射程序－服务器端（并发服务器）
  */
 #include "unp.h"
 #include <unistd.h>
@@ -60,24 +60,25 @@ int main(int argc, char *argv[])
         Close(connfd);          /* 关闭已连接套拼字描述符 */
     }
 }
-
+/*
 实验：
-[dendi875@localhost Chapter-5 TCP Client-Server Example]$ ./tcpcliserv01
+[dendi875@192 Chapter-5 TCP Client-Server Example]$ ./tcpserv01
 
 查看端口正常
-[root@localhost ~]# netstat -tlunp | grep 9877
-tcp        0      0 0.0.0.0:9877                0.0.0.0:*                   LISTEN      25088/./tcpcliserv0
+[root@192 ~]# netstat -tlunp | grep 9877
+tcp        0      0 0.0.0.0:9877                0.0.0.0:*                   LISTEN      1686/./tcpserv01
 
 使用 nc 来测试
-[dendi875@localhost ~]$ nc 192.168.100.130 9877
+[dendi875@192 ~]$ nc 192.168.17.128 9877
 hello,socket
 hello,socket
 hello,world
 hello,world
 
 重新开一个窗口来测试
-[root@localhost ~]# nc 192.168.100.130 9877
+[dendi875@192 ~]$ nc 192.168.17.128 9877
 hello
 hello
 socket
 socket
+*/

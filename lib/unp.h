@@ -47,8 +47,14 @@
 #define SERV_PORT   9877    /* TCP and UDP */
 
 
+/* 错误处理函数 */
 #include "error.c"
+
+/* 包裹函数 */
 #include "wrapunix.c"
+#include "wrapstdio.c"
+
+
 #include "sock_bind_wild.c"
 #include "sock_cmp_addr.c"
 #include "sock_cmp_port.c"
@@ -58,10 +64,13 @@
 #include "sock_set_addr.c"
 #include "sock_set_port.c"
 #include "sock_set_wild.c"
+
 #include "readline.c"
 #include "readn.c"
 #include "writen.c"
+
 #include "str_echo.c"
+#include "str_cli.c"
 
 #endif /* _unp_h */
 

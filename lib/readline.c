@@ -1,20 +1,23 @@
 /* include readline */
 #include	"unp.h"
 
-static int	read_cnt;
+static int	read_cnt;			/* 值为0或1 */
 static char	*read_ptr;
-static char	read_buf[MAXLINE];
+static char	read_buf[MAXLINE];	/* 缓冲区 */
 
+/**
+ * 每次最多读　MAXLINE 个字符，然后每次返回一个字符
+ */
 static ssize_t my_read(int fd, char *ptr)
 {
 
 	if (read_cnt <= 0) {
 again:
 		if ( (read_cnt = read(fd, read_buf, sizeof(read_buf))) < 0) {
-			if (errno == EINTR)
+			if (errno == EINTR)		/* 被中断进行重试 */
 				goto again;
 			return(-1);
-		} else if (read_cnt == 0)
+		} else if (read_cnt == 0)	/* 文件末尾 */
 			return(0);
 		read_ptr = read_buf;
 	}
