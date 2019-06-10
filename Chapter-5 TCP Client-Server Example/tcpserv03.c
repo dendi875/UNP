@@ -16,7 +16,7 @@ void sig_chld(int signo)
     int     status;
 
     pid = wait(&status);
-    printf("child %d terminated", pid);
+    printf("child %d terminated\n", pid);
     return;
 }
 
