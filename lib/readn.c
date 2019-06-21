@@ -3,8 +3,8 @@
 
 ssize_t readn(int fd, void *vptr, size_t n) /* Read "n" bytes from a descriptor. */
 {
-	size_t	nleft;
-	ssize_t	nread;
+	size_t	nleft;	/* 剩余未读字节数 */
+	ssize_t	nread;	/* 已读到的字节数 */
 	char	*ptr;
 
 	ptr = vptr;

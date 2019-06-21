@@ -1,7 +1,7 @@
 /* include readline */
 #include	"unp.h"
 
-static int	read_cnt;			/* 值为0或1 */
+static int	read_cnt;
 static char	*read_ptr;
 static char	read_buf[MAXLINE];	/* 缓冲区 */
 
@@ -27,6 +27,9 @@ again:
 	return(1);
 }
 
+/**
+ * 模仿 fgets 函数功能，从 socket 中获取一行数据，遇到换行符（\n）结束
+ */
 ssize_t readline(int fd, void *vptr, size_t maxlen)
 {
 	ssize_t	n, rc;

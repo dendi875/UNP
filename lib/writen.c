@@ -3,8 +3,8 @@
 
 ssize_t writen(int fd, const void *vptr, size_t n) /* Write "n" bytes to a descriptor. */
 {
-	size_t		nleft;
-	ssize_t		nwritten;
+	size_t		nleft;		/* 剩余未写的字节数 */
+	ssize_t		nwritten;	/* 本次已写的字节数 */
 	const char	*ptr;
 
 	ptr = vptr;

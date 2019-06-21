@@ -53,7 +53,8 @@
 /* 包裹函数 */
 #include "wrapunix.c"
 #include "wrapstdio.c"
-
+#include "wrapsock.c"
+#include "wraplib.c"
 
 #include "sock_bind_wild.c"
 #include "sock_cmp_addr.c"
