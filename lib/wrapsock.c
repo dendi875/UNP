@@ -41,6 +41,28 @@ void Listen(int sockfd, int backlog)
     }
 }
 
+int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
+{
+    int    n;
+
+again:
+    if ( (n = accept(sockfd, addr, addrlen)) < 0) {
+#ifdef  EPROTO
+        if (errno == EPROTO || errno == ECONNABORTED) {
+
+        }
+#else
+        if (errno == ECONNABORTED) {
+            goto again;
+        }
+#endif
+        else {
+            err_sys("accept error");
+        }
+    }
+    return(n);
+}
+
 int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout)
 {
     int n;
@@ -49,4 +71,14 @@ int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struc
         err_sys("select error");
     }
     return(n);  /* 超时时可以返回0 */
+}
+
+int Shutdown(int sockfd, int how)
+{
+    int     n;
+
+    if ( (n = shutdown(sockfd, how)) < 0) {
+        err_sys("shutdown error");
+    }
+    return(n);
 }

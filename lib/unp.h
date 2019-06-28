@@ -39,13 +39,14 @@
 #endif
 
 /* 常值 */
-
 #define MAXLINE		4096	/* 文件行的最大长度 */
 #define BUFFSIZE    8192	/* 读写缓冲区的字节数 */
 
 /* Define some port number that can be used for our examples */
 #define SERV_PORT   9877    /* TCP and UDP */
 
+#define min(a, b)   ((a) < (b) ? (a) : (b))
+#define max(a, b)   ((a) > (b) ? (a) : (b))
 
 /* 错误处理函数 */
 #include "error.c"

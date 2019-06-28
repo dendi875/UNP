@@ -87,3 +87,19 @@ int main(int argc, char **argv)
 
     exit(0);
 }
+
+/*
+实验：
+1、后台启动服务器
+[dendi875@localhost Chapter-5 TCP Client-Server Example]$ ./tcpserv03 &
+[1] 29814
+
+2、同一个主机上前台启动客户端
+[dendi875@localhost Chapter-5 TCP Client-Server Example]$ ./tcpcli03 192.168.100.142
+hello,socket
+hello,socket
+
+按 ctrl+d 后
+[dendi875@localhost Chapter-5 TCP Client-Server Example]$ child 29820 terminated
+
+*/

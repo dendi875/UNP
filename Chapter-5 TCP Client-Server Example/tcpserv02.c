@@ -131,10 +131,10 @@ int main(int argc, char **argv)
 实验：
 1、后台启动服务器
 [dendi875@localhost Chapter-5 TCP Client-Server Example]$ ./tcpserv02 &
-[1] 7637
+[1] 29636
 
 2、同一个主机上前台启动客户端
-[dendi875@localhost Chapter-5 TCP Client-Server Example]$ ./tcpcli01 127.0.0.1
+[dendi875@localhost Chapter-5 TCP Client-Server Example]$ ./tcpcli02 127.0.0.1
 hello,socket
 hello,socket
 
