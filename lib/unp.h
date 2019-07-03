@@ -38,6 +38,10 @@
 # include	<sys/select.h>	/* for convenience */
 #endif
 
+#ifdef HAVE_POLL_H
+# include   <poll.h>
+#endif
+
 /* 常值 */
 #define MAXLINE		4096	/* 文件行的最大长度 */
 #define BUFFSIZE    8192	/* 读写缓冲区的字节数 */

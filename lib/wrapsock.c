@@ -73,6 +73,18 @@ int Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struc
     return(n);  /* 超时时可以返回0 */
 }
 
+#ifdef HAVE_POLL
+int Poll(struct pollfd *fds, nfds_t nfds, int timeout)
+{
+    int n;
+
+    if ( (n = poll(fds, nfds, timeout)) < 0) {
+        err_sys("poll error");
+    }
+    return(n);  /* 超时时可以返回0 */
+}
+#endif
+
 int Shutdown(int sockfd, int how)
 {
     int     n;
