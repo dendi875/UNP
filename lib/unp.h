@@ -46,6 +46,10 @@
 #define MAXLINE		4096	/* 文件行的最大长度 */
 #define BUFFSIZE    8192	/* 读写缓冲区的字节数 */
 
+#ifndef INET_ADDRSTRLEN
+#define INET_ADDRSTRLEN 16  /* "ddd.ddd.ddd.ddd\0" 1234567890123456 */
+#endif
+
 /* Define some port number that can be used for our examples */
 #define SERV_PORT   9877    /* TCP and UDP */
 
@@ -77,6 +81,9 @@
 
 #include "str_echo.c"
 #include "str_cli.c"
+
+#include "dg_echo.c"
+#include "dg_cli.c"
 
 #endif /* _unp_h */
 

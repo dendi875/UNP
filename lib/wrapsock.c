@@ -104,3 +104,33 @@ int Getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optl
     }
     return(n);
 }
+
+int Setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen)
+{
+    int   n;
+
+    if ( (n = setsockopt(sockfd, level, optname, optval, optlen)) < 0) {
+        err_sys("setsockopt error");
+    }
+    return(n);
+}
+
+ssize_t Recvfrom(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen)
+{
+    ssize_t    n;
+
+    if ( (n = recvfrom(sockfd, buf, len, flags, src_addr, addrlen)) < 0) {
+        err_sys("recvfrom error");
+    }
+    return(n);
+}
+
+ssize_t Sendto(int sockfd, const void *buf, size_t len, int flags, const struct sockaddr *dest_addr, socklen_t addrlen)
+{
+    ssize_t    n;
+
+    if ( (n = sendto(sockfd, buf, len, flags, dest_addr, addrlen)) != (ssize_t)len) {
+        err_sys("sendto error");
+    }
+    return(n);
+}
