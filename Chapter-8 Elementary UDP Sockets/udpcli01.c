@@ -32,3 +32,10 @@ int main(int argc, char **argv)
 
     exit(0);
 }
+
+/**
+ * 实验：
+ * [dendi875@localhost Chapter-8 Elementary UDP Sockets]$ ./udpcli01 192.168.100.145
+ * hello udp
+ * hello udp
+ */

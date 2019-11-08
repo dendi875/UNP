@@ -134,3 +134,17 @@ ssize_t Sendto(int sockfd, const void *buf, size_t len, int flags, const struct 
     }
     return(n);
 }
+
+/**
+ * 如果是客户端调用能够获取服务器端的 IP和端口；
+ * 如果是服务器端调用能够获取客户端的 IP和端口
+ */
+int Getpeername(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
+{
+	int n;
+
+	if ((n = getpeername(sockfd, addr, addrlen)) < 0) {
+		err_sys("getpeername error");
+	}
+	return(n);
+}

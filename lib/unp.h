@@ -85,5 +85,12 @@
 #include "dg_echo.c"
 #include "dg_cli.c"
 
+/* 第十一章 */
+#include "tcp_connect.c"
+#include "tcp_listen.c"
+#include "udp_client.c"
+#include "udp_connect.c"
+#include "udp_server.c"
+
 #endif /* _unp_h */
 

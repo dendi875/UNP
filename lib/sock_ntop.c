@@ -4,7 +4,11 @@
 #include	<net/if_dl.h>
 #endif
 
-/* include sock_ntop */
+/**
+ * include sock_ntop
+ * 把IP地址的网络字节序和端口的网络字节序转成字符串形式的表达式。
+ * 本函数是与协议无关的，IP地址可以是IPV4或IPV6
+ */
 char *sock_ntop(const struct sockaddr *sa, socklen_t salen)
 {
     char		portstr[8];
