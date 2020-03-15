@@ -15,6 +15,7 @@ int main(int argc, char **argv)
 		err_quit("usage：./tcpcli01 <IPaddress>");
 	}
 
+	/* 创建一个 IPv4 的 TCP 套接字 */
 	if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		err_sys("socket error");
 	}

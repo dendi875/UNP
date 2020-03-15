@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     socklen_t               clilen;
     pid_t                   childpid;
 
+    /* 创建一个 IPv4 的 TCP 套接字 */
     if ((listenfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         err_sys("socket error");
     }
@@ -25,10 +26,13 @@ int main(int argc, char *argv[])
     serveraddr.sin_family = AF_INET;
     serveraddr.sin_port = htons(SERV_PORT);
     serveraddr.sin_addr.s_addr = htonl(INADDR_ANY);
+
+    /* 把地址和端口绑定到套接字上 */
     if (bind(listenfd, (struct sockaddr *) &serveraddr, sizeof(serveraddr)) < 0) {
         err_sys("error bind");
     }
 
+    /* 把未连接的套接字转成已监听的套接字 */
     if (listen(listenfd, SOMAXCONN) < 0) {
         err_sys("listen error");
     }
